@@ -22,19 +22,19 @@ int main(void)
 {
 	keypad_vinit();
 	LCD_INIT();
-	seven_seg_init('B');
-	SET_BIT(DDRC,0);
-	SET_BIT(DDRC,1);
-	SET_BIT(DDRC,2);
-	SET_BIT(DDRC,3);
-	SET_BIT(DDRC,4);
-	SET_BIT(DDRC,5);
+// 	seven_seg_init('B');
+// 	SET_BIT(DDRC,0);
+// 	SET_BIT(DDRC,1);
+// 	SET_BIT(DDRC,2);
+// 	SET_BIT(DDRC,3);
+// 	SET_BIT(DDRC,4);
+// 	SET_BIT(DDRC,5);
 	LCD_SEND_CMD(0x0c);
 	
 
      LCD_SEND_STRING("SET TIME (1)");
-// 	LCD_MOVE_CURSOR(2,1);
-// 	LCD_SEND_STRING("SET DATA (2)");
+	LCD_MOVE_CURSOR(2,1);
+	LCD_SEND_STRING("SET DATA (2)");
 	_delay_ms(500);
 	TIMER2_overflow_interrupt();
 	
@@ -140,103 +140,103 @@ int main(void)
 			
 			
 					
-// 			else if(READ=='2')
-// 			{
+			else if(READ=='2')
+			{
 				
-// 				L4:
-// 				LCD_clear_screen();
-// 				LCD_SEND_STRING("MONTHS:--");
-// 				LCD_MOVE_CURSOR(1,8);
-// 				_delay_ms(150);
-// 				do
-// 				{
-// 					digit1=keybad_u8read_press();
-// 							
-// 				}while(digit1==notpassed);
-// 				LCD_SEND_CHAR(digit1);
-// 				_delay_ms(200);
-// 				do
-// 				{
-// 					digit2=keybad_u8read_press();
-// 							
-// 				}while(digit2==notpassed);
-// 				LCD_SEND_CHAR(digit2);
-// 				_delay_ms(150);
-// 				month=(digit2-48)+10*(digit1-48);
-// 				if(month>12)
-// 				{
-// 					LCD_clear_screen();
-// 					LCD_SEND_STRING("enter mon again");
-// 					LCD_MOVE_CURSOR(2,1);
-// 					LCD_SEND_STRING("between 01 to 12");
-// 					_delay_ms(300);
-// 					goto L4;
-// 				}
-// 				L5:
-// 				LCD_clear_screen();
-// 				LCD_SEND_STRING("DAYS:--");
-// 				LCD_MOVE_CURSOR(1,6);
-// 				_delay_ms(200);
-// 				do
-// 				{
-// 					digit1=keybad_u8read_press();
-// 							
-// 				}while(digit1==notpassed);
-// 				LCD_SEND_CHAR(digit1);
-// 				_delay_ms(150);
-// 				do
-// 				{
-// 					digit2=keybad_u8read_press();
-// 							
-// 				}while(digit2==notpassed);
-// 				LCD_SEND_CHAR(digit2);
-// 				_delay_ms(200);
-// 				day=(digit2-48)+10*(digit1-48);
-// 				if(day>30)
-// 				{
-// 					LCD_clear_screen();
-// 					LCD_SEND_STRING("enter days again");
-// 					LCD_MOVE_CURSOR(2,1);
-// 					LCD_SEND_STRING("between 01 to 30");
-// 					_delay_ms(300);
-// 					goto L5;
-// 				}
-// 				LCD_clear_screen();
-// 				LCD_SEND_STRING("YEARS:----");
-// 				LCD_MOVE_CURSOR(1,7);
-// 				_delay_ms(150);
-// 				do
-// 				{
-// 					digit1=keybad_u8read_press();
-// 							
-// 				}while(digit1==notpassed);
-// 				LCD_SEND_CHAR(digit1);
-// 				_delay_ms(150);
-// 				do
-// 				{
-// 					digit2=keybad_u8read_press();
-// 							
-// 				}while(digit2==notpassed);
-// 				LCD_SEND_CHAR(digit2);
-// 				_delay_ms(150);
-// 				do
-// 				{
-// 					digit3=keybad_u8read_press();
-// 							
-// 				}while(digit3==notpassed);
-// 				LCD_SEND_CHAR(digit3);
-// 				_delay_ms(150);
-// 				do
-// 				{
-// 					digit4=keybad_u8read_press();
-// 							
-// 				}while(digit4==notpassed);
-// 				LCD_SEND_CHAR(digit4);
-// 				_delay_ms(150);
-// 				year=(digit1-48)*1000+(digit2-48)*100+(digit3-48)*10+(digit4-48);
-// 				LCD_clear_screen();
-// 				
-/*    	}*/
+				L4:
+				LCD_clear_screen();
+				LCD_SEND_STRING("MONTHS:--");
+				LCD_MOVE_CURSOR(1,8);
+				_delay_ms(150);
+				do
+				{
+					digit1=keybad_u8read_press();
+							
+				}while(digit1==notpassed);
+				LCD_SEND_CHAR(digit1);
+				_delay_ms(200);
+				do
+				{
+					digit2=keybad_u8read_press();
+							
+				}while(digit2==notpassed);
+				LCD_SEND_CHAR(digit2);
+				_delay_ms(150);
+				month=(digit2-48)+10*(digit1-48);
+				if(month>12)
+				{
+					LCD_clear_screen();
+					LCD_SEND_STRING("enter mon again");
+					LCD_MOVE_CURSOR(2,1);
+					LCD_SEND_STRING("between 01 to 12");
+					_delay_ms(300);
+					goto L4;
+				}
+				L5:
+				LCD_clear_screen();
+				LCD_SEND_STRING("DAYS:--");
+				LCD_MOVE_CURSOR(1,6);
+				_delay_ms(200);
+				do
+				{
+					digit1=keybad_u8read_press();
+							
+				}while(digit1==notpassed);
+				LCD_SEND_CHAR(digit1);
+				_delay_ms(150);
+				do
+				{
+					digit2=keybad_u8read_press();
+							
+				}while(digit2==notpassed);
+				LCD_SEND_CHAR(digit2);
+				_delay_ms(200);
+				day=(digit2-48)+10*(digit1-48);
+				if(day>30)
+				{
+					LCD_clear_screen();
+					LCD_SEND_STRING("enter days again");
+					LCD_MOVE_CURSOR(2,1);
+					LCD_SEND_STRING("between 01 to 30");
+					_delay_ms(300);
+					goto L5;
+				}
+				LCD_clear_screen();
+				LCD_SEND_STRING("YEARS:----");
+				LCD_MOVE_CURSOR(1,7);
+				_delay_ms(150);
+				do
+				{
+					digit1=keybad_u8read_press();
+							
+				}while(digit1==notpassed);
+				LCD_SEND_CHAR(digit1);
+				_delay_ms(150);
+				do
+				{
+					digit2=keybad_u8read_press();
+							
+				}while(digit2==notpassed);
+				LCD_SEND_CHAR(digit2);
+				_delay_ms(150);
+				do
+				{
+					digit3=keybad_u8read_press();
+							
+				}while(digit3==notpassed);
+				LCD_SEND_CHAR(digit3);
+				_delay_ms(150);
+				do
+				{
+					digit4=keybad_u8read_press();
+							
+				}while(digit4==notpassed);
+				LCD_SEND_CHAR(digit4);
+				_delay_ms(150);
+				year=(digit1-48)*1000+(digit2-48)*100+(digit3-48)*10+(digit4-48);
+				LCD_clear_screen();
+				
+			}            
 			else
 			{
 				LCD_clear_screen();
@@ -244,89 +244,88 @@ int main(void)
 				_delay_ms(300);
 				goto L7;
 			}
-			LCD_clear_screen();
-			 LCD_SEND_STRING("(1)set time");
+			
 			 
 		
 		}	
 		
 		
-		SET_BIT(PORTC,0);
-		SET_BIT(PORTC,1);
-		SET_BIT(PORTC,2);
-		SET_BIT(PORTC,3);
-		SET_BIT(PORTC,4);
-		CLEAR_BIT(PORTC,5);
-		seven_seg_write('B',seconds%10);
-		_delay_ms(5);
-		SET_BIT(PORTC,0);
-		SET_BIT(PORTC,1);
-		SET_BIT(PORTC,2);
-		SET_BIT(PORTC,3);
-		SET_BIT(PORTC,5);
-		CLEAR_BIT(PORTC,4);
-		seven_seg_write('B',seconds/10);
-		_delay_ms(5);
-		SET_BIT(PORTC,0);
-		SET_BIT(PORTC,1);
-		SET_BIT(PORTC,2);
-		SET_BIT(PORTC,4);
-		SET_BIT(PORTC,5);
-		CLEAR_BIT(PORTC,3);
-		seven_seg_write('B',minutes%10);
-		_delay_ms(5);
-		SET_BIT(PORTC,0);
-		SET_BIT(PORTC,1);
-		SET_BIT(PORTC,3);
-		SET_BIT(PORTC,4);
-		SET_BIT(PORTC,5);
-		CLEAR_BIT(PORTC,2);
-		seven_seg_write('B',minutes/10);
-		_delay_ms(5);
-		SET_BIT(PORTC,0);
-		SET_BIT(PORTC,2);
-		SET_BIT(PORTC,3);
-		SET_BIT(PORTC,4);
-		SET_BIT(PORTC,5);
-		CLEAR_BIT(PORTC,1);
-		seven_seg_write('B',hours%10);
-		_delay_ms(5);
-		SET_BIT(PORTC,1);
-		SET_BIT(PORTC,2);
-		SET_BIT(PORTC,3);
-		SET_BIT(PORTC,4);
-		SET_BIT(PORTC,5);
-		CLEAR_BIT(PORTC,0);
-		seven_seg_write('B',hours/10);
-		_delay_ms(5); 
+// 		SET_BIT(PORTC,0);
+// 		SET_BIT(PORTC,1);
+// 		SET_BIT(PORTC,2);
+// 		SET_BIT(PORTC,3);
+// 		SET_BIT(PORTC,4);
+// 		CLEAR_BIT(PORTC,5);
+// 		seven_seg_write('B',seconds%10);
+// 		_delay_ms(5);
+// 		SET_BIT(PORTC,0);
+// 		SET_BIT(PORTC,1);
+// 		SET_BIT(PORTC,2);
+// 		SET_BIT(PORTC,3);
+// 		SET_BIT(PORTC,5);
+// 		CLEAR_BIT(PORTC,4);
+// 		seven_seg_write('B',seconds/10);
+// 		_delay_ms(5);
+// 		SET_BIT(PORTC,0);
+// 		SET_BIT(PORTC,1);
+// 		SET_BIT(PORTC,2);
+// 		SET_BIT(PORTC,4);
+// 		SET_BIT(PORTC,5);
+// 		CLEAR_BIT(PORTC,3);
+// 		seven_seg_write('B',minutes%10);
+// 		_delay_ms(5);
+// 		SET_BIT(PORTC,0);
+// 		SET_BIT(PORTC,1);
+// 		SET_BIT(PORTC,3);
+// 		SET_BIT(PORTC,4);
+// 		SET_BIT(PORTC,5);
+// 		CLEAR_BIT(PORTC,2);
+// 		seven_seg_write('B',minutes/10);
+// 		_delay_ms(5);
+// 		SET_BIT(PORTC,0);
+// 		SET_BIT(PORTC,2);
+// 		SET_BIT(PORTC,3);
+// 		SET_BIT(PORTC,4);
+// 		SET_BIT(PORTC,5);
+// 		CLEAR_BIT(PORTC,1);
+// 		seven_seg_write('B',hours%10);
+// 		_delay_ms(5);
+// 		SET_BIT(PORTC,1);
+// 		SET_BIT(PORTC,2);
+// 		SET_BIT(PORTC,3);
+// 		SET_BIT(PORTC,4);
+// 		SET_BIT(PORTC,5);
+// 		CLEAR_BIT(PORTC,0);
+// 		seven_seg_write('B',hours/10);
+// 		_delay_ms(5); 
 		
 		
 		
 		
-// 		LCD_MOVE_CURSOR(1,1);
-// 		LCD_SEND_STRING("Time:");
-// 		LCD_MOVE_CURSOR(1,6);
-// 		LCD_SEND_CHAR(hours/10+48);
-// 		LCD_SEND_CHAR(hours%10+48);
-// 		LCD_SEND_STRING(":");
-// 		LCD_SEND_CHAR(minutes/10+48);
-// 		LCD_SEND_CHAR(minutes%10+48);
-// 		LCD_SEND_STRING(":");
-// 		LCD_SEND_CHAR(seconds/10+48);
-// 		LCD_SEND_CHAR(seconds%10+48);
-// 		LCD_MOVE_CURSOR(2,1);
-// 		LCD_SEND_STRING("Data:");
-// 		LCD_MOVE_CURSOR(2,6);
-// 		LCD_SEND_CHAR(month/10+48);
-// 		LCD_SEND_CHAR(month%10+48);
-// 		LCD_SEND_STRING("/");
-// 		LCD_SEND_CHAR(day/10+48);
-// 		LCD_SEND_CHAR(day%10+48);
-// 		LCD_SEND_STRING("/");
-// 		LCD_SEND_CHAR((year/1000) +48);
-// 		LCD_SEND_CHAR(((year/100) % 10)+48);
-// 		LCD_SEND_CHAR(((year/10) % 10)+48);
-// 		LCD_SEND_CHAR((year%10) +48);
+		LCD_MOVE_CURSOR(1,1);
+		LCD_SEND_STRING("Time:");
+		LCD_MOVE_CURSOR(1,6);
+		LCD_SEND_CHAR(hours/10+48);
+		LCD_SEND_CHAR(hours%10+48);
+		LCD_SEND_STRING(":");
+		LCD_SEND_CHAR(minutes/10+48);
+		LCD_SEND_CHAR(minutes%10+48);
+		LCD_SEND_STRING(":");
+		LCD_SEND_CHAR(seconds/10+48);
+		LCD_SEND_CHAR(seconds%10+48);
+		LCD_MOVE_CURSOR(2,1);
+		LCD_SEND_STRING("Data:");
+		LCD_MOVE_CURSOR(2,6);
+		LCD_SEND_CHAR(month/10+48);
+		LCD_SEND_CHAR(month%10+48);
+		LCD_SEND_STRING("/");
+		LCD_SEND_CHAR(day/10+48);
+		LCD_SEND_CHAR(day%10+48);
+		LCD_SEND_STRING("/");
+		LCD_SEND_CHAR((year/1000) +48);
+		LCD_SEND_CHAR(((year/100) % 10)+48);
+		LCD_SEND_CHAR(((year/10) % 10)+48);
+		LCD_SEND_CHAR((year%10) +48);
 		if(seconds>=60)
 		{
 			seconds=0;
@@ -338,19 +337,19 @@ int main(void)
 			hours++;
 		}
 		
-// 		if(flag==1&& hours<=12)
-// 		{
-// 			LCD_MOVE_CURSOR(1,15);
-// 			LCD_SEND_STRING("AM");
-// 		}
-// 		else if(hours>= 13 && hours<=24 && flag==1)
-// 		{
-// 			day++;
-// 			LCD_MOVE_CURSOR(1,15);
-// 			LCD_SEND_STRING("PM");
-// 			hours=hours-12;
-// 			flag=0;
-// 		}
+		if(flag==1&& hours<=12)
+		{
+			LCD_MOVE_CURSOR(1,15);
+			LCD_SEND_STRING("AM");
+		}
+		else if(hours>= 13 && hours<=24 && flag==1)
+		{
+			day++;
+			LCD_MOVE_CURSOR(1,15);
+			LCD_SEND_STRING("PM");
+			hours=hours-12;
+			flag=0;
+		}
 		
 		if (day>=31)
 		{
