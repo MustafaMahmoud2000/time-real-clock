@@ -135,7 +135,11 @@ int main(void)
 					goto L3;
 				}
 				flag=1;
-			}			
+			}	
+			
+			
+			
+					
 // 			else if(READ=='2')
 // 			{
 				
@@ -347,22 +351,6 @@ int main(void)
 // 			hours=hours-12;
 // 			flag=0;
 // 		}
-		
-		if(sec>=60)
-		{
-			sec=0;
-			min++;
-		}
-		if(min>=60)
-		{
-			min=0;
-			hou++;
-		}
-		
-		if( hours>24)
-		{
-			hou=1;
-		}
 		
 		if (day>=31)
 		{
